@@ -7,12 +7,15 @@ export default {
       // these options are set automatically — see below
       pages: "public",
       assets: "public",
-      // fallback: 'index.html',
+      fallback: 'index.html',
       precompress: false,
       strict: false,
     }),
+    prerender: {
+      entries: ['*'] // prerender all routes
+    },
     paths: {
       base: "", // Use '' for root path or '/your-subpath' if deploying to a subpath
-    },
+    }
   },
 };
