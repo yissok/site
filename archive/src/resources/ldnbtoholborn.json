@@ -1,0 +1,2114 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "partial_match": true,
+            "place_id": "ChIJxRO7WVEDdkgRrGM1fCYoHqY",
+            "types": [
+                "establishment",
+                "point_of_interest",
+                "tourist_attraction"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "partial_match": true,
+            "place_id": "ChIJr11YVTQbdkgRhY0V1HABqq8",
+            "types": [
+                "establishment",
+                "point_of_interest",
+                "subway_station",
+                "transit_station"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 51.5183583,
+                    "lng": -0.08638079999999999
+                },
+                "southwest": {
+                    "lat": 51.5089984,
+                    "lng": -0.1202282
+                }
+            },
+            "copyrights": "Map data ©2024 Google",
+            "fare": {
+                "currency": "GBP",
+                "text": "£2.70",
+                "value": 2.7
+            },
+            "legs": [
+                {
+                    "arrival_time": {
+                        "text": "1:14 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731244485
+                    },
+                    "departure_time": {
+                        "text": "1:02 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731243767
+                    },
+                    "distance": {
+                        "text": "2.9 km",
+                        "value": 2877
+                    },
+                    "duration": {
+                        "text": "12 mins",
+                        "value": 718
+                    },
+                    "end_address": "Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                    "end_location": {
+                        "lat": 51.5175191,
+                        "lng": -0.1202282
+                    },
+                    "start_address": "London Bridge, London EC4R 3TN, UK",
+                    "start_location": {
+                        "lat": 51.5089984,
+                        "lng": -0.08718949999999999
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 km",
+                                "value": 525
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 279
+                            },
+                            "end_location": {
+                                "lat": 51.5134661,
+                                "lng": -0.0883002
+                            },
+                            "html_instructions": "Walk to Bank Station",
+                            "polyline": {
+                                "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA_@M?C@GWY{O~J"
+                            },
+                            "start_location": {
+                                "lat": 51.5089984,
+                                "lng": -0.08718949999999999
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "0.2 km",
+                                        "value": 188
+                                    },
+                                    "duration": {
+                                        "text": "3 mins",
+                                        "value": 152
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106587,
+                                        "lng": -0.0865687
+                                    },
+                                    "html_instructions": "Head <b>north</b> on <b>King William St</b>/<wbr/><b>London Bridge</b>/<wbr/><b>A3</b><div style=\"font-size:0.9em\">Continue to follow King William St/<wbr/>A3</div>",
+                                    "polyline": {
+                                        "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA_@M"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5089984,
+                                        "lng": -0.08718949999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "7 m",
+                                        "value": 7
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 5
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106592,
+                                        "lng": -0.08654710000000002
+                                    },
+                                    "html_instructions": "Turn <b>right</b>",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "stkyH`|O?C"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106587,
+                                        "lng": -0.0865687
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "building_level": {
+                                        "number": 0
+                                    },
+                                    "distance": {
+                                        "text": "3 m",
+                                        "value": 3
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 2
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51065180000001,
+                                        "lng": -0.08651149999999999
+                                    },
+                                    "html_instructions": "Walk for 3m",
+                                    "polyline": {
+                                        "points": "stkyH|{O@G"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106592,
+                                        "lng": -0.08654710000000002
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "0.3 km",
+                                        "value": 327
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 120
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5134661,
+                                        "lng": -0.0883002
+                                    },
+                                    "html_instructions": "Take entrance <span class=\"location\">Eastcheap, Great Tower St.</span>",
+                                    "polyline": {
+                                        "points": "iukyHzzO{O~J"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.510775,
+                                        "lng": -0.08638079999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        },
+                        {
+                            "distance": {
+                                "text": "2.3 km",
+                                "value": 2270
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 307
+                            },
+                            "end_location": {
+                                "lat": 51.5176646,
+                                "lng": -0.119053
+                            },
+                            "html_instructions": "Subway towards Ealing Broadway",
+                            "polyline": {
+                                "points": "eflyHzfPYNDTLx@F`@BRD`@@H?`@C^A`@QrB?@g@|E_CrUIv@]jD}ApFk@pCWrAOr@Or@m@zCOr@Mr@Ml@Qx@Or@m@|COr@]fBo@zCG\\GZQ|@Or@cAnF_@bCIf@ALGv@WfDANEh@Ev@Gv@SjDGv@Ev@c@zGATAb@GlBAt@A`A?nB?BBv@DdANtDLtCl@fMVfF\\G"
+                            },
+                            "start_location": {
+                                "lat": 51.5134661,
+                                "lng": -0.0883002
+                            },
+                            "transit_details": {
+                                "arrival_stop": {
+                                    "location": {
+                                        "lat": 51.5176646,
+                                        "lng": -0.119053
+                                    },
+                                    "name": "Holborn"
+                                },
+                                "arrival_time": {
+                                    "text": "1:12 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731244364
+                                },
+                                "departure_stop": {
+                                    "location": {
+                                        "lat": 51.5134661,
+                                        "lng": -0.0883002
+                                    },
+                                    "name": "Bank Station"
+                                },
+                                "departure_time": {
+                                    "text": "1:07 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731244057
+                                },
+                                "headsign": "Ealing Broadway",
+                                "headway": 180,
+                                "line": {
+                                    "agencies": [
+                                        {
+                                            "name": "Transport for London",
+                                            "url": "https://tfl.gov.uk/modes/tube/"
+                                        }
+                                    ],
+                                    "color": "#da291c",
+                                    "name": "Central Line",
+                                    "short_name": "Central",
+                                    "text_color": "#ffffff",
+                                    "url": "https://tfl.gov.uk/modes/tube/",
+                                    "vehicle": {
+                                        "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+                                        "local_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/uk-london-underground.png",
+                                        "name": "Subway",
+                                        "type": "SUBWAY"
+                                    }
+                                },
+                                "num_stops": 3
+                            },
+                            "travel_mode": "TRANSIT"
+                        },
+                        {
+                            "distance": {
+                                "text": "82 m",
+                                "value": 82
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 121
+                            },
+                            "end_location": {
+                                "lat": 51.5175191,
+                                "lng": -0.1202282
+                            },
+                            "html_instructions": "Walk to Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                            "polyline": {
+                                "points": "k`myH`gVL~DLj@"
+                            },
+                            "start_location": {
+                                "lat": 51.5176646,
+                                "lng": -0.119053
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "66 m",
+                                        "value": 66
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 110
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51759149999999,
+                                        "lng": -0.1200141
+                                    },
+                                    "html_instructions": "Take exit <span class=\"location\">High Holborn</span>",
+                                    "polyline": {
+                                        "points": "k`myH`gVL~D"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5176646,
+                                        "lng": -0.119053
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "16 m",
+                                        "value": 16
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 11
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5175191,
+                                        "lng": -0.1202282
+                                    },
+                                    "polyline": {
+                                        "points": "}_myH`mVLj@"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.51759149999999,
+                                        "lng": -0.1200141
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "gjkyH|_P_AU_B]_@O[IiA]e@O@KWY{O~JYNDTTzAHt@@j@E`AyDf`@g@bF}ApFk@pCg@fC}@nE}@nE}D`SsAbHi@jDc@|F{AfVMhG?rBH|B\\jIdAnT\\GL~DLj@"
+            },
+            "summary": "",
+            "warnings": [
+                "Walking directions are in beta. Use caution – This route may be missing sidewalks or pedestrian paths."
+            ],
+            "waypoint_order": []
+        },
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 51.5183583,
+                    "lng": -0.08638079999999999
+                },
+                "southwest": {
+                    "lat": 51.5089984,
+                    "lng": -0.1202282
+                }
+            },
+            "copyrights": "Map data ©2024 Google",
+            "fare": {
+                "currency": "GBP",
+                "text": "£2.70",
+                "value": 2.7
+            },
+            "legs": [
+                {
+                    "arrival_time": {
+                        "text": "1:11 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731244305
+                    },
+                    "departure_time": {
+                        "text": "12:59 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731243587
+                    },
+                    "distance": {
+                        "text": "2.9 km",
+                        "value": 2877
+                    },
+                    "duration": {
+                        "text": "12 mins",
+                        "value": 718
+                    },
+                    "end_address": "Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                    "end_location": {
+                        "lat": 51.5175191,
+                        "lng": -0.1202282
+                    },
+                    "start_address": "London Bridge, London EC4R 3TN, UK",
+                    "start_location": {
+                        "lat": 51.5089984,
+                        "lng": -0.08718949999999999
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 km",
+                                "value": 525
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 279
+                            },
+                            "end_location": {
+                                "lat": 51.5134661,
+                                "lng": -0.0883002
+                            },
+                            "html_instructions": "Walk to Bank Station",
+                            "polyline": {
+                                "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA_@M?C@GWY{O~J"
+                            },
+                            "start_location": {
+                                "lat": 51.5089984,
+                                "lng": -0.08718949999999999
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "0.2 km",
+                                        "value": 188
+                                    },
+                                    "duration": {
+                                        "text": "3 mins",
+                                        "value": 152
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106587,
+                                        "lng": -0.0865687
+                                    },
+                                    "html_instructions": "Head <b>north</b> on <b>King William St</b>/<wbr/><b>London Bridge</b>/<wbr/><b>A3</b><div style=\"font-size:0.9em\">Continue to follow King William St/<wbr/>A3</div>",
+                                    "polyline": {
+                                        "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA_@M"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5089984,
+                                        "lng": -0.08718949999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "7 m",
+                                        "value": 7
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 5
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106592,
+                                        "lng": -0.08654710000000002
+                                    },
+                                    "html_instructions": "Turn <b>right</b>",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "stkyH`|O?C"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106587,
+                                        "lng": -0.0865687
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "building_level": {
+                                        "number": 0
+                                    },
+                                    "distance": {
+                                        "text": "3 m",
+                                        "value": 3
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 2
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51065180000001,
+                                        "lng": -0.08651149999999999
+                                    },
+                                    "html_instructions": "Walk for 3m",
+                                    "polyline": {
+                                        "points": "stkyH|{O@G"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106592,
+                                        "lng": -0.08654710000000002
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "0.3 km",
+                                        "value": 327
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 120
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5134661,
+                                        "lng": -0.0883002
+                                    },
+                                    "html_instructions": "Take entrance <span class=\"location\">Eastcheap, Great Tower St.</span>",
+                                    "polyline": {
+                                        "points": "iukyHzzO{O~J"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.510775,
+                                        "lng": -0.08638079999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        },
+                        {
+                            "distance": {
+                                "text": "2.3 km",
+                                "value": 2270
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 307
+                            },
+                            "end_location": {
+                                "lat": 51.5176646,
+                                "lng": -0.119053
+                            },
+                            "html_instructions": "Subway towards West Ruislip",
+                            "polyline": {
+                                "points": "eflyHzfPYNDTLx@F`@BRD`@@H?`@C^A`@QrB?@g@|E_CrUIv@]jD}ApFk@pCWrAOr@Or@m@zCOr@Mr@Ml@Qx@Or@m@|COr@]fBo@zCG\\GZQ|@Or@cAnF_@bCIf@ALGv@WfDANEh@Ev@Gv@SjDGv@Ev@c@zGATAb@GlBAt@A`A?nB?BBv@DdANtDLtCl@fMVfF\\G"
+                            },
+                            "start_location": {
+                                "lat": 51.5134661,
+                                "lng": -0.0883002
+                            },
+                            "transit_details": {
+                                "arrival_stop": {
+                                    "location": {
+                                        "lat": 51.5176646,
+                                        "lng": -0.119053
+                                    },
+                                    "name": "Holborn"
+                                },
+                                "arrival_time": {
+                                    "text": "1:09 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731244184
+                                },
+                                "departure_stop": {
+                                    "location": {
+                                        "lat": 51.5134661,
+                                        "lng": -0.0883002
+                                    },
+                                    "name": "Bank Station"
+                                },
+                                "departure_time": {
+                                    "text": "1:04 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731243877
+                                },
+                                "headsign": "West Ruislip",
+                                "headway": 180,
+                                "line": {
+                                    "agencies": [
+                                        {
+                                            "name": "Transport for London",
+                                            "url": "https://tfl.gov.uk/modes/tube/"
+                                        }
+                                    ],
+                                    "color": "#da291c",
+                                    "name": "Central Line",
+                                    "short_name": "Central",
+                                    "text_color": "#ffffff",
+                                    "url": "https://tfl.gov.uk/modes/tube/",
+                                    "vehicle": {
+                                        "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+                                        "local_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/uk-london-underground.png",
+                                        "name": "Subway",
+                                        "type": "SUBWAY"
+                                    }
+                                },
+                                "num_stops": 3
+                            },
+                            "travel_mode": "TRANSIT"
+                        },
+                        {
+                            "distance": {
+                                "text": "82 m",
+                                "value": 82
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 121
+                            },
+                            "end_location": {
+                                "lat": 51.5175191,
+                                "lng": -0.1202282
+                            },
+                            "html_instructions": "Walk to Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                            "polyline": {
+                                "points": "k`myH`gVL~DLj@"
+                            },
+                            "start_location": {
+                                "lat": 51.5176646,
+                                "lng": -0.119053
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "66 m",
+                                        "value": 66
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 110
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51759149999999,
+                                        "lng": -0.1200141
+                                    },
+                                    "html_instructions": "Take exit <span class=\"location\">High Holborn</span>",
+                                    "polyline": {
+                                        "points": "k`myH`gVL~D"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5176646,
+                                        "lng": -0.119053
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "16 m",
+                                        "value": 16
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 11
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5175191,
+                                        "lng": -0.1202282
+                                    },
+                                    "polyline": {
+                                        "points": "}_myH`mVLj@"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.51759149999999,
+                                        "lng": -0.1200141
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "gjkyH|_P_AU_B]_@O[IiA]e@O@KWY{O~JYNDTTzAHt@@j@E`AyDf`@g@bF}ApFk@pCg@fC}@nE}@nE}D`SsAbHi@jDc@|F{AfVMhG?rBH|B\\jIdAnT\\GL~DLj@"
+            },
+            "summary": "",
+            "warnings": [
+                "Walking directions are in beta. Use caution – This route may be missing sidewalks or pedestrian paths."
+            ],
+            "waypoint_order": []
+        },
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 51.5183583,
+                    "lng": -0.08638079999999999
+                },
+                "southwest": {
+                    "lat": 51.5089984,
+                    "lng": -0.1202282
+                }
+            },
+            "copyrights": "Map data ©2024 Google",
+            "fare": {
+                "currency": "GBP",
+                "text": "£2.70",
+                "value": 2.7
+            },
+            "legs": [
+                {
+                    "arrival_time": {
+                        "text": "1:08 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731244125
+                    },
+                    "departure_time": {
+                        "text": "12:56 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731243407
+                    },
+                    "distance": {
+                        "text": "2.9 km",
+                        "value": 2877
+                    },
+                    "duration": {
+                        "text": "12 mins",
+                        "value": 718
+                    },
+                    "end_address": "Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                    "end_location": {
+                        "lat": 51.5175191,
+                        "lng": -0.1202282
+                    },
+                    "start_address": "London Bridge, London EC4R 3TN, UK",
+                    "start_location": {
+                        "lat": 51.5089984,
+                        "lng": -0.08718949999999999
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 km",
+                                "value": 525
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 279
+                            },
+                            "end_location": {
+                                "lat": 51.5134661,
+                                "lng": -0.0883002
+                            },
+                            "html_instructions": "Walk to Bank Station",
+                            "polyline": {
+                                "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA_@M?C@GWY{O~J"
+                            },
+                            "start_location": {
+                                "lat": 51.5089984,
+                                "lng": -0.08718949999999999
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "0.2 km",
+                                        "value": 188
+                                    },
+                                    "duration": {
+                                        "text": "3 mins",
+                                        "value": 152
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106587,
+                                        "lng": -0.0865687
+                                    },
+                                    "html_instructions": "Head <b>north</b> on <b>King William St</b>/<wbr/><b>London Bridge</b>/<wbr/><b>A3</b><div style=\"font-size:0.9em\">Continue to follow King William St/<wbr/>A3</div>",
+                                    "polyline": {
+                                        "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA_@M"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5089984,
+                                        "lng": -0.08718949999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "7 m",
+                                        "value": 7
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 5
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106592,
+                                        "lng": -0.08654710000000002
+                                    },
+                                    "html_instructions": "Turn <b>right</b>",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "stkyH`|O?C"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106587,
+                                        "lng": -0.0865687
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "building_level": {
+                                        "number": 0
+                                    },
+                                    "distance": {
+                                        "text": "3 m",
+                                        "value": 3
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 2
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51065180000001,
+                                        "lng": -0.08651149999999999
+                                    },
+                                    "html_instructions": "Walk for 3m",
+                                    "polyline": {
+                                        "points": "stkyH|{O@G"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106592,
+                                        "lng": -0.08654710000000002
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "0.3 km",
+                                        "value": 327
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 120
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5134661,
+                                        "lng": -0.0883002
+                                    },
+                                    "html_instructions": "Take entrance <span class=\"location\">Eastcheap, Great Tower St.</span>",
+                                    "polyline": {
+                                        "points": "iukyHzzO{O~J"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.510775,
+                                        "lng": -0.08638079999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        },
+                        {
+                            "distance": {
+                                "text": "2.3 km",
+                                "value": 2270
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 307
+                            },
+                            "end_location": {
+                                "lat": 51.5176646,
+                                "lng": -0.119053
+                            },
+                            "html_instructions": "Subway towards White City",
+                            "polyline": {
+                                "points": "eflyHzfPYNDTLx@F`@BRD`@@H?`@C^A`@QrB?@g@|E_CrUIv@]jD}ApFk@pCWrAOr@Or@m@zCOr@Mr@Ml@Qx@Or@m@|COr@]fBo@zCG\\GZQ|@Or@cAnF_@bCIf@ALGv@WfDANEh@Ev@Gv@SjDGv@Ev@c@zGATAb@GlBAt@A`A?nB?BBv@DdANtDLtCl@fMVfF\\G"
+                            },
+                            "start_location": {
+                                "lat": 51.5134661,
+                                "lng": -0.0883002
+                            },
+                            "transit_details": {
+                                "arrival_stop": {
+                                    "location": {
+                                        "lat": 51.5176646,
+                                        "lng": -0.119053
+                                    },
+                                    "name": "Holborn"
+                                },
+                                "arrival_time": {
+                                    "text": "1:06 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731244004
+                                },
+                                "departure_stop": {
+                                    "location": {
+                                        "lat": 51.5134661,
+                                        "lng": -0.0883002
+                                    },
+                                    "name": "Bank Station"
+                                },
+                                "departure_time": {
+                                    "text": "1:01 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731243697
+                                },
+                                "headsign": "White City",
+                                "headway": 180,
+                                "line": {
+                                    "agencies": [
+                                        {
+                                            "name": "Transport for London",
+                                            "url": "https://tfl.gov.uk/modes/tube/"
+                                        }
+                                    ],
+                                    "color": "#da291c",
+                                    "name": "Central Line",
+                                    "short_name": "Central",
+                                    "text_color": "#ffffff",
+                                    "url": "https://tfl.gov.uk/modes/tube/",
+                                    "vehicle": {
+                                        "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+                                        "local_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/uk-london-underground.png",
+                                        "name": "Subway",
+                                        "type": "SUBWAY"
+                                    }
+                                },
+                                "num_stops": 3
+                            },
+                            "travel_mode": "TRANSIT"
+                        },
+                        {
+                            "distance": {
+                                "text": "82 m",
+                                "value": 82
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 121
+                            },
+                            "end_location": {
+                                "lat": 51.5175191,
+                                "lng": -0.1202282
+                            },
+                            "html_instructions": "Walk to Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                            "polyline": {
+                                "points": "k`myH`gVL~DLj@"
+                            },
+                            "start_location": {
+                                "lat": 51.5176646,
+                                "lng": -0.119053
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "66 m",
+                                        "value": 66
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 110
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51759149999999,
+                                        "lng": -0.1200141
+                                    },
+                                    "html_instructions": "Take exit <span class=\"location\">High Holborn</span>",
+                                    "polyline": {
+                                        "points": "k`myH`gVL~D"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5176646,
+                                        "lng": -0.119053
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "16 m",
+                                        "value": 16
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 11
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5175191,
+                                        "lng": -0.1202282
+                                    },
+                                    "polyline": {
+                                        "points": "}_myH`mVLj@"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.51759149999999,
+                                        "lng": -0.1200141
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "gjkyH|_P_AU_B]_@O[IiA]e@O@KWY{O~JYNDTTzAHt@@j@E`AyDf`@g@bF}ApFk@pCg@fC}@nE}@nE}D`SsAbHi@jDc@|F{AfVMhG?rBH|B\\jIdAnT\\GL~DLj@"
+            },
+            "summary": "",
+            "warnings": [
+                "Walking directions are in beta. Use caution – This route may be missing sidewalks or pedestrian paths."
+            ],
+            "waypoint_order": []
+        },
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 51.5183583,
+                    "lng": -0.08638079999999999
+                },
+                "southwest": {
+                    "lat": 51.5089984,
+                    "lng": -0.1202282
+                }
+            },
+            "copyrights": "Map data ©2024 Google",
+            "fare": {
+                "currency": "GBP",
+                "text": "£2.70",
+                "value": 2.7
+            },
+            "legs": [
+                {
+                    "arrival_time": {
+                        "text": "1:05 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731243945
+                    },
+                    "departure_time": {
+                        "text": "12:53 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731243227
+                    },
+                    "distance": {
+                        "text": "2.9 km",
+                        "value": 2877
+                    },
+                    "duration": {
+                        "text": "12 mins",
+                        "value": 718
+                    },
+                    "end_address": "Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                    "end_location": {
+                        "lat": 51.5175191,
+                        "lng": -0.1202282
+                    },
+                    "start_address": "London Bridge, London EC4R 3TN, UK",
+                    "start_location": {
+                        "lat": 51.5089984,
+                        "lng": -0.08718949999999999
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 km",
+                                "value": 525
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 279
+                            },
+                            "end_location": {
+                                "lat": 51.5134661,
+                                "lng": -0.0883002
+                            },
+                            "html_instructions": "Walk to Bank Station",
+                            "polyline": {
+                                "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA_@M?C@GWY{O~J"
+                            },
+                            "start_location": {
+                                "lat": 51.5089984,
+                                "lng": -0.08718949999999999
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "0.2 km",
+                                        "value": 188
+                                    },
+                                    "duration": {
+                                        "text": "3 mins",
+                                        "value": 152
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106587,
+                                        "lng": -0.0865687
+                                    },
+                                    "html_instructions": "Head <b>north</b> on <b>King William St</b>/<wbr/><b>London Bridge</b>/<wbr/><b>A3</b><div style=\"font-size:0.9em\">Continue to follow King William St/<wbr/>A3</div>",
+                                    "polyline": {
+                                        "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA_@M"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5089984,
+                                        "lng": -0.08718949999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "7 m",
+                                        "value": 7
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 5
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106592,
+                                        "lng": -0.08654710000000002
+                                    },
+                                    "html_instructions": "Turn <b>right</b>",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "stkyH`|O?C"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106587,
+                                        "lng": -0.0865687
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "building_level": {
+                                        "number": 0
+                                    },
+                                    "distance": {
+                                        "text": "3 m",
+                                        "value": 3
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 2
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51065180000001,
+                                        "lng": -0.08651149999999999
+                                    },
+                                    "html_instructions": "Walk for 3m",
+                                    "polyline": {
+                                        "points": "stkyH|{O@G"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106592,
+                                        "lng": -0.08654710000000002
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "0.3 km",
+                                        "value": 327
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 120
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5134661,
+                                        "lng": -0.0883002
+                                    },
+                                    "html_instructions": "Take entrance <span class=\"location\">Eastcheap, Great Tower St.</span>",
+                                    "polyline": {
+                                        "points": "iukyHzzO{O~J"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.510775,
+                                        "lng": -0.08638079999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        },
+                        {
+                            "distance": {
+                                "text": "2.3 km",
+                                "value": 2270
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 307
+                            },
+                            "end_location": {
+                                "lat": 51.5176646,
+                                "lng": -0.119053
+                            },
+                            "html_instructions": "Subway towards West Ruislip",
+                            "polyline": {
+                                "points": "eflyHzfPYNDTLx@F`@BRD`@@H?`@C^A`@QrB?@g@|E_CrUIv@]jD}ApFk@pCWrAOr@Or@m@zCOr@Mr@Ml@Qx@Or@m@|COr@]fBo@zCG\\GZQ|@Or@cAnF_@bCIf@ALGv@WfDANEh@Ev@Gv@SjDGv@Ev@c@zGATAb@GlBAt@A`A?nB?BBv@DdANtDLtCl@fMVfF\\G"
+                            },
+                            "start_location": {
+                                "lat": 51.5134661,
+                                "lng": -0.0883002
+                            },
+                            "transit_details": {
+                                "arrival_stop": {
+                                    "location": {
+                                        "lat": 51.5176646,
+                                        "lng": -0.119053
+                                    },
+                                    "name": "Holborn"
+                                },
+                                "arrival_time": {
+                                    "text": "1:03 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731243824
+                                },
+                                "departure_stop": {
+                                    "location": {
+                                        "lat": 51.5134661,
+                                        "lng": -0.0883002
+                                    },
+                                    "name": "Bank Station"
+                                },
+                                "departure_time": {
+                                    "text": "12:58 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731243517
+                                },
+                                "headsign": "West Ruislip",
+                                "headway": 180,
+                                "line": {
+                                    "agencies": [
+                                        {
+                                            "name": "Transport for London",
+                                            "url": "https://tfl.gov.uk/modes/tube/"
+                                        }
+                                    ],
+                                    "color": "#da291c",
+                                    "name": "Central Line",
+                                    "short_name": "Central",
+                                    "text_color": "#ffffff",
+                                    "url": "https://tfl.gov.uk/modes/tube/",
+                                    "vehicle": {
+                                        "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+                                        "local_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/uk-london-underground.png",
+                                        "name": "Subway",
+                                        "type": "SUBWAY"
+                                    }
+                                },
+                                "num_stops": 3
+                            },
+                            "travel_mode": "TRANSIT"
+                        },
+                        {
+                            "distance": {
+                                "text": "82 m",
+                                "value": 82
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 121
+                            },
+                            "end_location": {
+                                "lat": 51.5175191,
+                                "lng": -0.1202282
+                            },
+                            "html_instructions": "Walk to Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                            "polyline": {
+                                "points": "k`myH`gVL~DLj@"
+                            },
+                            "start_location": {
+                                "lat": 51.5176646,
+                                "lng": -0.119053
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "66 m",
+                                        "value": 66
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 110
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51759149999999,
+                                        "lng": -0.1200141
+                                    },
+                                    "html_instructions": "Take exit <span class=\"location\">High Holborn</span>",
+                                    "polyline": {
+                                        "points": "k`myH`gVL~D"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5176646,
+                                        "lng": -0.119053
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "16 m",
+                                        "value": 16
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 11
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5175191,
+                                        "lng": -0.1202282
+                                    },
+                                    "polyline": {
+                                        "points": "}_myH`mVLj@"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.51759149999999,
+                                        "lng": -0.1200141
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "gjkyH|_P_AU_B]_@O[IiA]e@O@KWY{O~JYNDTTzAHt@@j@E`AyDf`@g@bF}ApFk@pCg@fC}@nE}@nE}D`SsAbHi@jDc@|F{AfVMhG?rBH|B\\jIdAnT\\GL~DLj@"
+            },
+            "summary": "",
+            "warnings": [
+                "Walking directions are in beta. Use caution – This route may be missing sidewalks or pedestrian paths."
+            ],
+            "waypoint_order": []
+        },
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 51.5183583,
+                    "lng": -0.08638079999999999
+                },
+                "southwest": {
+                    "lat": 51.5089984,
+                    "lng": -0.1202282
+                }
+            },
+            "copyrights": "Map data ©2024 Google",
+            "fare": {
+                "currency": "GBP",
+                "text": "£2.70",
+                "value": 2.7
+            },
+            "legs": [
+                {
+                    "arrival_time": {
+                        "text": "1:03 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731243825
+                    },
+                    "departure_time": {
+                        "text": "12:51 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731243107
+                    },
+                    "distance": {
+                        "text": "2.9 km",
+                        "value": 2877
+                    },
+                    "duration": {
+                        "text": "12 mins",
+                        "value": 718
+                    },
+                    "end_address": "Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                    "end_location": {
+                        "lat": 51.5175191,
+                        "lng": -0.1202282
+                    },
+                    "start_address": "London Bridge, London EC4R 3TN, UK",
+                    "start_location": {
+                        "lat": 51.5089984,
+                        "lng": -0.08718949999999999
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 km",
+                                "value": 525
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 279
+                            },
+                            "end_location": {
+                                "lat": 51.5134661,
+                                "lng": -0.0883002
+                            },
+                            "html_instructions": "Walk to Bank Station",
+                            "polyline": {
+                                "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA_@M?C@GWY{O~J"
+                            },
+                            "start_location": {
+                                "lat": 51.5089984,
+                                "lng": -0.08718949999999999
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "0.2 km",
+                                        "value": 188
+                                    },
+                                    "duration": {
+                                        "text": "3 mins",
+                                        "value": 152
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106587,
+                                        "lng": -0.0865687
+                                    },
+                                    "html_instructions": "Head <b>north</b> on <b>King William St</b>/<wbr/><b>London Bridge</b>/<wbr/><b>A3</b><div style=\"font-size:0.9em\">Continue to follow King William St/<wbr/>A3</div>",
+                                    "polyline": {
+                                        "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA_@M"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5089984,
+                                        "lng": -0.08718949999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "7 m",
+                                        "value": 7
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 5
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106592,
+                                        "lng": -0.08654710000000002
+                                    },
+                                    "html_instructions": "Turn <b>right</b>",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "stkyH`|O?C"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106587,
+                                        "lng": -0.0865687
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "building_level": {
+                                        "number": 0
+                                    },
+                                    "distance": {
+                                        "text": "3 m",
+                                        "value": 3
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 2
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51065180000001,
+                                        "lng": -0.08651149999999999
+                                    },
+                                    "html_instructions": "Walk for 3m",
+                                    "polyline": {
+                                        "points": "stkyH|{O@G"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106592,
+                                        "lng": -0.08654710000000002
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "0.3 km",
+                                        "value": 327
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 120
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5134661,
+                                        "lng": -0.0883002
+                                    },
+                                    "html_instructions": "Take entrance <span class=\"location\">Eastcheap, Great Tower St.</span>",
+                                    "polyline": {
+                                        "points": "iukyHzzO{O~J"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.510775,
+                                        "lng": -0.08638079999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        },
+                        {
+                            "distance": {
+                                "text": "2.3 km",
+                                "value": 2270
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 307
+                            },
+                            "end_location": {
+                                "lat": 51.5176646,
+                                "lng": -0.119053
+                            },
+                            "html_instructions": "Subway towards Ealing Broadway",
+                            "polyline": {
+                                "points": "eflyHzfPYNDTLx@F`@BRD`@@H?`@C^A`@QrB?@g@|E_CrUIv@]jD}ApFk@pCWrAOr@Or@m@zCOr@Mr@Ml@Qx@Or@m@|COr@]fBo@zCG\\GZQ|@Or@cAnF_@bCIf@ALGv@WfDANEh@Ev@Gv@SjDGv@Ev@c@zGATAb@GlBAt@A`A?nB?BBv@DdANtDLtCl@fMVfF\\G"
+                            },
+                            "start_location": {
+                                "lat": 51.5134661,
+                                "lng": -0.0883002
+                            },
+                            "transit_details": {
+                                "arrival_stop": {
+                                    "location": {
+                                        "lat": 51.5176646,
+                                        "lng": -0.119053
+                                    },
+                                    "name": "Holborn"
+                                },
+                                "arrival_time": {
+                                    "text": "1:01 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731243704
+                                },
+                                "departure_stop": {
+                                    "location": {
+                                        "lat": 51.5134661,
+                                        "lng": -0.0883002
+                                    },
+                                    "name": "Bank Station"
+                                },
+                                "departure_time": {
+                                    "text": "12:56 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731243397
+                                },
+                                "headsign": "Ealing Broadway",
+                                "headway": 180,
+                                "line": {
+                                    "agencies": [
+                                        {
+                                            "name": "Transport for London",
+                                            "url": "https://tfl.gov.uk/modes/tube/"
+                                        }
+                                    ],
+                                    "color": "#da291c",
+                                    "name": "Central Line",
+                                    "short_name": "Central",
+                                    "text_color": "#ffffff",
+                                    "url": "https://tfl.gov.uk/modes/tube/",
+                                    "vehicle": {
+                                        "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+                                        "local_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/uk-london-underground.png",
+                                        "name": "Subway",
+                                        "type": "SUBWAY"
+                                    }
+                                },
+                                "num_stops": 3
+                            },
+                            "travel_mode": "TRANSIT"
+                        },
+                        {
+                            "distance": {
+                                "text": "82 m",
+                                "value": 82
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 121
+                            },
+                            "end_location": {
+                                "lat": 51.5175191,
+                                "lng": -0.1202282
+                            },
+                            "html_instructions": "Walk to Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                            "polyline": {
+                                "points": "k`myH`gVL~DLj@"
+                            },
+                            "start_location": {
+                                "lat": 51.5176646,
+                                "lng": -0.119053
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "66 m",
+                                        "value": 66
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 110
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51759149999999,
+                                        "lng": -0.1200141
+                                    },
+                                    "html_instructions": "Take exit <span class=\"location\">High Holborn</span>",
+                                    "polyline": {
+                                        "points": "k`myH`gVL~D"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5176646,
+                                        "lng": -0.119053
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "16 m",
+                                        "value": 16
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 11
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5175191,
+                                        "lng": -0.1202282
+                                    },
+                                    "polyline": {
+                                        "points": "}_myH`mVLj@"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.51759149999999,
+                                        "lng": -0.1200141
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "gjkyH|_P_AU_B]_@O[IiA]e@O@KWY{O~JYNDTTzAHt@@j@E`AyDf`@g@bF}ApFk@pCg@fC}@nE}@nE}D`SsAbHi@jDc@|F{AfVMhG?rBH|B\\jIdAnT\\GL~DLj@"
+            },
+            "summary": "",
+            "warnings": [
+                "Walking directions are in beta. Use caution – This route may be missing sidewalks or pedestrian paths."
+            ],
+            "waypoint_order": []
+        },
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 51.5182844,
+                    "lng": -0.08652290000000001
+                },
+                "southwest": {
+                    "lat": 51.5089984,
+                    "lng": -0.1199905
+                }
+            },
+            "copyrights": "Map data ©2024 Google",
+            "fare": {
+                "currency": "GBP",
+                "text": "£1.75",
+                "value": 1.75
+            },
+            "legs": [
+                {
+                    "arrival_time": {
+                        "text": "1:12 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731244340
+                    },
+                    "departure_time": {
+                        "text": "12:51 PM",
+                        "time_zone": "Europe/London",
+                        "value": 1731243089
+                    },
+                    "distance": {
+                        "text": "3.0 km",
+                        "value": 2981
+                    },
+                    "duration": {
+                        "text": "21 mins",
+                        "value": 1251
+                    },
+                    "end_address": "Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                    "end_location": {
+                        "lat": 51.5176259,
+                        "lng": -0.1199905
+                    },
+                    "start_address": "London Bridge, London EC4R 3TN, UK",
+                    "start_location": {
+                        "lat": 51.5089984,
+                        "lng": -0.08718949999999999
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 km",
+                                "value": 604
+                            },
+                            "duration": {
+                                "text": "9 mins",
+                                "value": 567
+                            },
+                            "end_location": {
+                                "lat": 51.5132907,
+                                "lng": -0.0876155
+                            },
+                            "html_instructions": "Walk to Bank Station / Cornhill (Stop E)",
+                            "polyline": {
+                                "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA[KAAGAEGGPAF?@CNCHCDGHGNGb@IECA?\\MED_@CCMHYPYVUNKHYTQN_@XEBKHOLo@f@GDMJKHEJGFGDQLUPMJEOCIAGBE?A?A?C?A?AE?BGAUGCMESEQGEA?UBa@?U?C"
+                            },
+                            "start_location": {
+                                "lat": 51.5089984,
+                                "lng": -0.08718949999999999
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "0.2 km",
+                                        "value": 191
+                                    },
+                                    "duration": {
+                                        "text": "3 mins",
+                                        "value": 158
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106856,
+                                        "lng": -0.0865561
+                                    },
+                                    "html_instructions": "Head <b>north</b> on <b>King William St</b>/<wbr/><b>London Bridge</b>/<wbr/><b>A3</b><div style=\"font-size:0.9em\">Continue to follow King William St/<wbr/>A3</div>",
+                                    "polyline": {
+                                        "points": "gjkyH|_PAAa@IMEMCe@K]GAAYGKGSGMEMCWGIEMCYKEA[KAAGA"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5089984,
+                                        "lng": -0.08718949999999999
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "6 m",
+                                        "value": 6
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 6
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5106856,
+                                        "lng": -0.0865561
+                                    },
+                                    "html_instructions": "Turn <b>right</b> toward <b>King William St</b>",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "ytkyH~{O"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106856,
+                                        "lng": -0.0865561
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "4 m",
+                                        "value": 4
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 6
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5107211,
+                                        "lng": -0.08652290000000001
+                                    },
+                                    "html_instructions": "Turn <b>left</b> toward <b>King William St</b><div style=\"font-size:0.9em\">Take the stairs</div>",
+                                    "maneuver": "turn-left",
+                                    "polyline": {
+                                        "points": "ytkyH~{OEG"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5106856,
+                                        "lng": -0.0865561
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "50 m",
+                                        "value": 50
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 67
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51095249999999,
+                                        "lng": -0.0871276
+                                    },
+                                    "html_instructions": "Take the pedestrian tunnel<div style=\"font-size:0.9em\">Take the stairs</div>",
+                                    "polyline": {
+                                        "points": "_ukyHv{OGPAF?@CNCHCDGHGNGb@"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5107211,
+                                        "lng": -0.08652290000000001
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "16 m",
+                                        "value": 16
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 34
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5110801,
+                                        "lng": -0.0870262
+                                    },
+                                    "html_instructions": "Take the crosswalk",
+                                    "polyline": {
+                                        "points": "mvkyHp_PIECA?\\MED_@CC"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.51095249999999,
+                                        "lng": -0.0871276
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "0.2 km",
+                                        "value": 223
+                                    },
+                                    "duration": {
+                                        "text": "3 mins",
+                                        "value": 183
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5128537,
+                                        "lng": -0.0885075
+                                    },
+                                    "html_instructions": "Turn <b>left</b> onto <b>King William St</b>",
+                                    "maneuver": "turn-left",
+                                    "polyline": {
+                                        "points": "gwkyH|~OMHYPYVUNKHYTQN_@XEBKHOLo@f@GDMJKHEJGFGDQLUP"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5110801,
+                                        "lng": -0.0870262
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "9 m",
+                                        "value": 9
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 7
+                                    },
+                                    "end_location": {
+                                        "lat": 51.51292369999999,
+                                        "lng": -0.08857200000000001
+                                    },
+                                    "html_instructions": "Continue straight onto <b>Lombard St</b>",
+                                    "maneuver": "straight",
+                                    "polyline": {
+                                        "points": "iblyHdhPMJ"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5128537,
+                                        "lng": -0.0885075
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "20 m",
+                                        "value": 20
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 37
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5129865,
+                                        "lng": -0.0883072
+                                    },
+                                    "html_instructions": "Turn <b>right</b> toward <b>Pope's Head Alley</b>",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "wblyHphPEOCIAGBE?A?A?C?A?AE?"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.51292369999999,
+                                        "lng": -0.08857200000000001
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "11 m",
+                                        "value": 11
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 9
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5129825,
+                                        "lng": -0.0881555
+                                    },
+                                    "html_instructions": "Turn <b>right</b> toward <b>Pope's Head Alley</b>",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "eclyH|fPBGAU"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5129865,
+                                        "lng": -0.0883072
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "46 m",
+                                        "value": 46
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 36
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5133115,
+                                        "lng": -0.0880343
+                                    },
+                                    "html_instructions": "Turn <b>left</b> onto <b>Pope's Head Alley</b>",
+                                    "maneuver": "turn-left",
+                                    "polyline": {
+                                        "points": "cclyH~ePGCMESEQGEA"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5129825,
+                                        "lng": -0.0881555
+                                    },
+                                    "travel_mode": "WALKING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "28 m",
+                                        "value": 28
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 24
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5132907,
+                                        "lng": -0.0876155
+                                    },
+                                    "html_instructions": "Turn <b>right</b> onto <b>Cornhill</b>",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "eelyHdeP?UBa@?U?C"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.5133115,
+                                        "lng": -0.0880343
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        },
+                        {
+                            "distance": {
+                                "text": "2.3 km",
+                                "value": 2277
+                            },
+                            "duration": {
+                                "text": "10 mins",
+                                "value": 595
+                            },
+                            "end_location": {
+                                "lat": 51.5176779,
+                                "lng": -0.1185255
+                            },
+                            "html_instructions": "Bus towards Tottenham Court Road",
+                            "polyline": {
+                                "points": "{dlyHrbPM??B?P?DC^?RAZC`@Af@@Z?x@@LBP?F?HAH?D?J?HANEl@Gj@MnAKfACPAHGp@CPC`@I`AIjACTCVGt@Gj@I~@CRE`@CTGt@OzAGr@C\\CVCLCXE\\Er@CXAHAFCXE`@ADAJADANEZAD?@AFG^CTALGd@AVIDCDEDEFKNGHGJA@ADCDCDGPEHADGPGRS`AKp@G^?F?B?HIb@Mv@Y|AAHCD[fBGXOt@Y`BAJStAEVIj@MXITK^Mh@Op@ETADABQt@GV@R?BOr@AFI^CLAJa@fBETI^IXABABIFGb@Kb@Kj@ENERGXG\\CPG^?DGd@CNCZETBX@NA@Ap@AT?|@Ef@C^M|BAVCf@UxDIxAAJCXCNATG~@CVCX?HEj@AR?@IPCp@AL?XExA?n@?b@?j@@Z@hAB`@DbA?TB`@?B@T@HHvBHjABb@HlB@@@PJbBFx@?DB^BZBf@@LFhADR?@@D?FHA"
+                            },
+                            "start_location": {
+                                "lat": 51.5132646,
+                                "lng": -0.08761819999999999
+                            },
+                            "transit_details": {
+                                "arrival_stop": {
+                                    "location": {
+                                        "lat": 51.5176779,
+                                        "lng": -0.1185255
+                                    },
+                                    "name": "Holborn Station (Stop K)"
+                                },
+                                "arrival_time": {
+                                    "text": "1:11 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731244260
+                                },
+                                "departure_stop": {
+                                    "location": {
+                                        "lat": 51.5132646,
+                                        "lng": -0.08761819999999999
+                                    },
+                                    "name": "Bank Station / Cornhill (Stop E)"
+                                },
+                                "departure_time": {
+                                    "text": "1:01 PM",
+                                    "time_zone": "Europe/London",
+                                    "value": 1731243665
+                                },
+                                "headsign": "Tottenham Court Road",
+                                "line": {
+                                    "agencies": [
+                                        {
+                                            "name": "Transport for London",
+                                            "url": "https://tfl.gov.uk/modes/tube/"
+                                        }
+                                    ],
+                                    "color": "#ce312d",
+                                    "name": "London Buses route 8",
+                                    "short_name": "8",
+                                    "text_color": "#ffffff",
+                                    "url": "https://tfl.gov.uk/",
+                                    "vehicle": {
+                                        "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                                        "local_icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/uk-london-bus.png",
+                                        "name": "Bus",
+                                        "type": "BUS"
+                                    }
+                                },
+                                "num_stops": 9
+                            },
+                            "travel_mode": "TRANSIT"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 100
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 80
+                            },
+                            "end_location": {
+                                "lat": 51.5176259,
+                                "lng": -0.1199905
+                            },
+                            "html_instructions": "Walk to Holborn, Underground Ltd, Holborn Station, Kingsway, London WC2B 6AA, UK",
+                            "polyline": {
+                                "points": "q`myHzcV@R@N@^?X@T?D?T@bA@r@?X"
+                            },
+                            "start_location": {
+                                "lat": 51.51768509999999,
+                                "lng": -0.1185366
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "0.1 km",
+                                        "value": 100
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 80
+                                    },
+                                    "end_location": {
+                                        "lat": 51.5176259,
+                                        "lng": -0.1199905
+                                    },
+                                    "html_instructions": "Head <b>west</b> on <b>High Holborn</b>/<wbr/><b>A40</b> toward <b>Little Turnstile</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                                    "polyline": {
+                                        "points": "q`myHzcV@R@N@^?X@T?D?T@bA@r@?X"
+                                    },
+                                    "start_location": {
+                                        "lat": 51.51768509999999,
+                                        "lng": -0.1185366
+                                    },
+                                    "travel_mode": "WALKING"
+                                }
+                            ],
+                            "travel_mode": "WALKING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "gjkyH|_P_AU_B]_@O[IiA]k@QEGGPAHGXKNOr@MG?\\MED_@CCg@Zo@f@wAhAqAbAUPQTw@l@MJEOEQBM?CE?@]{@WEA?UBw@?CD?M??B?VCr@E|@?bA@fABXAd@OrBy@zIiBjS_@~DWlBO`BYX]f@Qb@Wt@_@rBGf@?LWzA[fBCDmAxGe@dDc@nAe@vB[pA@VQz@q@`D[rAKJSfA_@hBStAUfBDh@Cr@ArAIfAi@vJSnCYrEIPCp@Af@EhC?nALjEDpAr@vMNzBDt@FhADR@F?FHA?TBn@@jABpC"
+            },
+            "summary": "",
+            "warnings": [
+                "Walking directions are in beta. Use caution – This route may be missing sidewalks or pedestrian paths."
+            ],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

@@ -1,0 +1,36 @@
+{
+
+    "terminal.integrated.profiles.osx": {
+        "BashWithStartup": {
+            "path": "/bin/bash",
+            "args": [
+            "--init-file",
+            "/Users/andrea/Documents/PROGETTI/GIT/scout/terminal_startup.sh"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.osx": "BashWithStartup",
+    "git.ignoreLimitWarning": true,
+      "editor.defaultFormatter": null,
+
+
+  "editor.formatOnSave": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.format.enable": false,
+  "typescript.format.enable": false
+  
+}
