@@ -125,7 +125,44 @@
       status = err.message;
     }
   }
+
+  async function oldtapIn() {
+    status = "Checking location...";
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        const { latitude, longitude } = pos.coords;
+        console.log("Current position:", latitude, longitude);
+        const dist = getDistance(office, { lat: latitude, lng: longitude });
+        if (dist <= RADIUS_METERS) {
+          status = "Logging your check-in...";
+          const apiUrl =
+            "https://api.allorigins.win/raw?url=" +
+            encodeURIComponent(
+              googleUrl +
+                "?name=" +
+                encodeURIComponent(name) +
+                "&surname=" +
+                encodeURIComponent(surname) +
+                "&lat=" +
+                latitude +
+                "&lng=" +
+                longitude,
+            );
+          await fetch(apiUrl);
+
+          status = "✅ Logged successfully!";
+        } else {
+          status = "❌ You are not at the office!";
+        }
+      },
+      (err) => {
+        status = "Location error: " + err.message;
+      },
+    );
+  }
 </script>
+
+<button on:click={oldtapIn}>old Tap In</button>
 
 <!-- UI -->
 <main>
