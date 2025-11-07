@@ -7,8 +7,13 @@
   });
   const office = { lat: 51.515, lng: -0.141 };
   const RADIUS_METERS = 100;
-  const apiUrl =
+  // const apiUrl =
+  //   "https://script.google.com/macros/s/AKfycbzTJfFf3es-C2JxUMGGSuaR0A06M35SI12befH1JygZssaIYqXeTQVPysEXvV7IbOUlgw/exec";
+  const googleUrl =
     "https://script.google.com/macros/s/AKfycbzTJfFf3es-C2JxUMGGSuaR0A06M35SI12befH1JygZssaIYqXeTQVPysEXvV7IbOUlgw/exec";
+  const apiUrl =
+    "https://api.allorigins.win/raw?url=" + encodeURIComponent(googleUrl);
+
   let name = "mario";
   let surname = "super";
   let status = "";
