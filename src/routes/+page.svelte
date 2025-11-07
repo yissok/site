@@ -66,7 +66,7 @@
   }
 </script>
 
-<h1>Office Tap-In</h1>
+<h1>Office Tap-In2</h1>
 <input placeholder="name" bind:value={name} />
 <input placeholder="surname" bind:value={surname} />
 <button on:click={tapIn}>Tap In</button>
