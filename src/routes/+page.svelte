@@ -9,7 +9,7 @@
   const office = { lat: 51.5183547, lng: -0.1161728 };
   const RADIUS_METERS = 200;
   const googleUrl =
-    "https://script.google.com/macros/s/AKfycbyvWoYXOfDtvP4qI4Q0_nCBaflNhMe5KBmaXkKjZTFC3NXr5czauIjb09jkDLPp2D8N6w/exec";
+    "https://script.google.com/macros/s/AKfycbx5JAkyttDJXCXPJeHFbsTIEhFpvXHbRKoixdP6kFTMjLdry2KTh-LG2ae7Ctt_9NAw/exec";
   const apiUrl =
     "https://api.allorigins.win/raw?url=" + encodeURIComponent(googleUrl);
 
@@ -100,35 +100,24 @@
   }
 
   async function tapalloriginInTest() {
-    status = "Checking location...";
-    status = "Logging your check-in...";
-
-    const payload = {
+    const params = new URLSearchParams({
       name: "mario",
       surname: "super",
-      lat: 0.123,
-      lng: 0.456,
-    };
+      lat: "0.123",
+      lng: "0.456",
+    });
+
+    const googleUrl2 = `${googleUrl}?${params}`;
+
+    // Wrap with AllOrigins to bypass CORS
+    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(googleUrl2)}`;
 
     try {
-      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(googleUrl)}`;
-
-      const response = await fetch(proxyUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
+      const response = await fetch(proxyUrl);
       const text = await response.text();
-      console.log("✅ Success:", text);
-      status = "✅ Logged successfully!";
+      console.log("✅ Response:", text);
     } catch (err) {
       console.error("❌ Error:", err);
-      status = "❌ Failed to log. Check console.";
     }
   }
 </script>
