@@ -42,7 +42,7 @@
           const apiUrl =
             "https://api.allorigins.win/raw?url=" +
             encodeURIComponent(
-              "https://script.google.com/macros/s/AKfycbzxUMRfkRQ9uRfLmhLgL8vqj3WlORaQBE4-JQGfoV2H-7HGyJjIYbauEc-iir8fHSfCdA/exec" +
+              "https://script.google.com/macros/s/AKfycbzE_NCOrQnT8ttnkdT0wwwZP5UkhO93wyzTPa-wTf34j20hbrgihTqHwMwYmenNvr7Z2A/exec" +
                 "?name=" +
                 encodeURIComponent(name) +
                 "&surname=" +
@@ -66,7 +66,7 @@
   }
 </script>
 
-<h1>Office Tap-In2</h1>
+<h1>Office Tap-In 3</h1>
 <input placeholder="name" bind:value={name} />
 <input placeholder="surname" bind:value={surname} />
 <button on:click={tapIn}>Tap In</button>
