@@ -162,7 +162,7 @@
   }
 </script>
 
-<button on:click={oldtapIn}>old Tap In</button>
+<!-- <button on:click={oldtapIn}>old Tap In</button> -->
 
 <!-- UI -->
 <main>
@@ -212,6 +212,7 @@
   input {
     padding: 0.8rem;
     font-size: 1rem;
+    font-family: "Courier", monospace;
     border-radius: 0.75rem;
     border: 1px solid #ccc;
     width: 100%;
@@ -225,6 +226,7 @@
     height: 35vh;
     font-size: 2rem;
     font-weight: bold;
+    font-family: "Courier", monospace;
     color: white;
     background: #0078ff;
     border: none;
@@ -243,6 +245,7 @@
   .test-btn {
     margin-top: 1rem;
     font-size: 1rem;
+    font-family: "Courier", monospace;
     padding: 0.6rem 1.2rem;
     border-radius: 0.75rem;
     background: #ddd;
