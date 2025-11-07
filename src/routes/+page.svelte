@@ -66,60 +66,23 @@
   }
 
   async function tapInTest() {
-    status = "Checking location...";
     status = "Logging your check-in...";
+    const apiUrl =
+      "https://api.allorigins.win/raw?url=" +
+      encodeURIComponent(
+        googleUrl +
+          "?name=" +
+          encodeURIComponent(name) +
+          "&surname=" +
+          encodeURIComponent(surname) +
+          "&lat=" +
+          "1.1" +
+          "&lng=" +
+          "2.2",
+      );
+    await fetch(apiUrl);
 
-    const payload = {
-      name: "mario",
-      surname: "super",
-      lat: 0.123,
-      lng: 0.456,
-    };
-
-    try {
-      const response = await fetch(googleUrl, {
-        method: "POST",
-        mode: "cors", // important for mobile
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
-      const text = await response.text();
-      console.log("✅ Success:", text);
-      status = "✅ Logged successfully!";
-    } catch (err) {
-      console.error("❌ Error:", err);
-      status = "❌ Failed to log. Check console.";
-    }
-  }
-
-  async function tapalloriginInTest() {
-    const params = new URLSearchParams({
-      name: "mario",
-      surname: "super",
-      lat: "0.123",
-      lng: "0.456",
-    });
-
-    const googleUrl2 = `${googleUrl}?${params}`;
-
-    // Wrap with AllOrigins to bypass CORS
-    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(googleUrl2)}`;
-
-    try {
-      const response = await fetch(proxyUrl);
-
-      const data = await response.json();
-      console.log("✅ Response:", data.contents);
-    } catch (err) {
-      console.error("❌ Error:", err);
-    }
+    status = "✅ Logged successfully!";
   }
 </script>
 
@@ -128,7 +91,6 @@
 <input placeholder="surname" bind:value={surname} />
 <button on:click={tapIn}>Tap In</button>
 <button on:click={tapInTest}>Tap In (developer test)</button>
-<button on:click={tapalloriginInTest}>Tap In (allorig)</button>
 <p>{status}</p>
 <Commit />
 <DebugPanel />
