@@ -5,7 +5,7 @@
   onMount(() => {
     console.log("Page mounted");
   });
-  const office = { lat: 51.515, lng: -0.141 };
+  const office = { lat: 51.5183547, lng: -0.1161728 };
   const RADIUS_METERS = 100;
   // const apiUrl =
   //   "https://script.google.com/macros/s/AKfycbzTJfFf3es-C2JxUMGGSuaR0A06M35SI12befH1JygZssaIYqXeTQVPysEXvV7IbOUlgw/exec";
@@ -37,7 +37,7 @@
       async (pos) => {
         const { latitude, longitude } = pos.coords;
         const dist = getDistance(office, { lat: latitude, lng: longitude });
-        if (dist >= RADIUS_METERS) {
+        if (dist <= RADIUS_METERS) {
           status = "Logging your check-in...";
           const apiUrl =
             "https://api.allorigins.win/raw?url=" +
