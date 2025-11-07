@@ -71,7 +71,7 @@
 
     let scriptUrl = googleUrl + "?name=mario&surname=super&lat=0.123&lng=0.456";
 
-    const result = await fetch(`${encodeURIComponent(scriptUrl)}`);
+    const result = await fetch(scriptUrl);
     const data = await result.json();
     console.log(JSON.parse(data.contents));
 
