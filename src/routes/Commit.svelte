@@ -43,7 +43,7 @@
     padding-bottom: 34px;
     font-family: "Courier", monospace;
 
-    font-size: 6px;
+    font-size: 12px;
     position: fixed;
     bottom: 0;
     left: 0;

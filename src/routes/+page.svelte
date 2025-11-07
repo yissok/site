@@ -9,7 +9,7 @@
   const office = { lat: 51.5183547, lng: -0.1161728 };
   const RADIUS_METERS = 200;
   const googleUrl =
-    "https://script.google.com/macros/s/AKfycbzTJfFf3es-C2JxUMGGSuaR0A06M35SI12befH1JygZssaIYqXeTQVPysEXvV7IbOUlgw/exec";
+    "https://script.google.com/macros/s/AKfycbz0LWLX2xr0XoCbbyKhbUMlzztJBZMnPG-yIN6gc5mXIZhYqZlIa24bcwt8Y-sLNlLWEA/exec";
   const apiUrl =
     "https://api.allorigins.win/raw?url=" + encodeURIComponent(googleUrl);
 
@@ -42,7 +42,7 @@
           const apiUrl =
             "https://api.allorigins.win/raw?url=" +
             encodeURIComponent(
-              "https://script.google.com/macros/s/AKfycbzE_NCOrQnT8ttnkdT0wwwZP5UkhO93wyzTPa-wTf34j20hbrgihTqHwMwYmenNvr7Z2A/exec" +
+              googleUrl +
                 "?name=" +
                 encodeURIComponent(name) +
                 "&surname=" +
@@ -69,12 +69,9 @@
     status = "Checking location...";
     status = "Logging your check-in...";
 
-    let scriptUrl =
-      "https://script.google.com/macros/s/AKfycbzE_NCOrQnT8ttnkdT0wwwZP5UkhO93wyzTPa-wTf34j20hbrgihTqHwMwYmenNvr7Z2A/exec?name=mario&surname=super&lat=0.123&lng=0.456";
+    let scriptUrl = googleUrl + "?name=mario&surname=super&lat=0.123&lng=0.456";
 
-    const result = await fetch(
-      `https://api.allorigins.win/get?url=${encodeURIComponent(scriptUrl)}`,
-    );
+    const result = await fetch(`${encodeURIComponent(scriptUrl)}`);
     const data = await result.json();
     console.log(JSON.parse(data.contents));
 
