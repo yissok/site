@@ -114,8 +114,9 @@
 
     try {
       const response = await fetch(proxyUrl);
-      const text = await response.text();
-      console.log("✅ Response:", text);
+
+      const data = await response.json();
+      console.log("✅ Response:", data.contents);
     } catch (err) {
       console.error("❌ Error:", err);
     }
