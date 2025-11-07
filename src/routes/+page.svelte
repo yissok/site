@@ -39,16 +39,21 @@
         const dist = getDistance(office, { lat: latitude, lng: longitude });
         if (dist >= RADIUS_METERS) {
           status = "Logging your check-in...";
-          await fetch(apiUrl, {
-            method: "POST",
-            body: JSON.stringify({
-              name,
-              surname,
-              lat: latitude,
-              lng: longitude,
-            }),
-            headers: { "Content-Type": "application/json" },
-          });
+          const apiUrl =
+            "https://api.allorigins.win/raw?url=" +
+            encodeURIComponent(
+              "https://script.google.com/macros/s/AKfycbzxUMRfkRQ9uRfLmhLgL8vqj3WlORaQBE4-JQGfoV2H-7HGyJjIYbauEc-iir8fHSfCdA/exec" +
+                "?name=" +
+                encodeURIComponent(name) +
+                "&surname=" +
+                encodeURIComponent(surname) +
+                "&lat=" +
+                latitude +
+                "&lng=" +
+                longitude,
+            );
+          await fetch(apiUrl);
+
           status = "✅ Logged successfully!";
         } else {
           status = "❌ You are not at the office!";
