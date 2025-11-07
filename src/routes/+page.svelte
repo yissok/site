@@ -77,12 +77,11 @@
     };
 
     try {
-      const response = await fetch(googleUrl, {
+      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(googleUrl)}`;
+
+      const response = await fetch(proxyUrl, {
         method: "POST",
-        mode: "cors", // important for mobile
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
