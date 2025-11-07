@@ -9,7 +9,7 @@
   const office = { lat: 51.5183547, lng: -0.1161728 };
   const RADIUS_METERS = 200;
   const googleUrl =
-    "https://script.google.com/macros/s/AKfycbz0LWLX2xr0XoCbbyKhbUMlzztJBZMnPG-yIN6gc5mXIZhYqZlIa24bcwt8Y-sLNlLWEA/exec";
+    "https://script.google.com/macros/s/AKfycbzODxuk_HdbpHOtv8UtEsZgcrSpKmxuyN5V7wV-hPy09MV_TngLpR-cG_Lmr47bXlWVTA/exec";
   const apiUrl =
     "https://api.allorigins.win/raw?url=" + encodeURIComponent(googleUrl);
 
@@ -69,13 +69,34 @@
     status = "Checking location...";
     status = "Logging your check-in...";
 
-    let scriptUrl = googleUrl + "?name=mario&surname=super&lat=0.123&lng=0.456";
+    const payload = {
+      name: "mario",
+      surname: "super",
+      lat: 0.123,
+      lng: 0.456,
+    };
 
-    const result = await fetch(scriptUrl);
-    const data = await result.json();
-    console.log(JSON.parse(data.contents));
+    try {
+      const response = await fetch(googleUrl, {
+        method: "POST",
+        mode: "cors", // important for mobile
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-    status = "✅ Logged successfully!";
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const text = await response.text();
+      console.log("✅ Success:", text);
+      status = "✅ Logged successfully!";
+    } catch (err) {
+      console.error("❌ Error:", err);
+      status = "❌ Failed to log. Check console.";
+    }
   }
 </script>
 
