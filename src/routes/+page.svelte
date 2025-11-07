@@ -68,13 +68,15 @@
   async function tapInTest() {
     status = "Checking location...";
     status = "Logging your check-in...";
-    const apiUrl =
-      "https://api.allorigins.win/raw?url=" +
-      encodeURIComponent(
-        "https://script.google.com/macros/s/AKfycbzE_NCOrQnT8ttnkdT0wwwZP5UkhO93wyzTPa-wTf34j20hbrgihTqHwMwYmenNvr7Z2A/exec" +
-          "?name=mario&surname=super&lat=0.123&lng=0.456",
-      );
-    await fetch(apiUrl);
+
+    let scriptUrl =
+      "https://script.google.com/macros/s/AKfycbzE_NCOrQnT8ttnkdT0wwwZP5UkhO93wyzTPa-wTf34j20hbrgihTqHwMwYmenNvr7Z2A/exec?name=mario&surname=super&lat=0.123&lng=0.456";
+
+    const result = await fetch(
+      `https://api.allorigins.win/get?url=${encodeURIComponent(scriptUrl)}`,
+    );
+    const data = await result.json();
+    console.log(JSON.parse(data.contents));
 
     status = "✅ Logged successfully!";
   }
