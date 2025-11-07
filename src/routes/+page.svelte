@@ -1,14 +1,13 @@
 <script lang="ts">
   import DebugPanel from "./DebugPanel.svelte";
+  import Commit from "./Commit.svelte";
   import { onMount } from "svelte";
 
   onMount(() => {
     console.log("Page mounted");
   });
   const office = { lat: 51.5183547, lng: -0.1161728 };
-  const RADIUS_METERS = 100;
-  // const apiUrl =
-  //   "https://script.google.com/macros/s/AKfycbzTJfFf3es-C2JxUMGGSuaR0A06M35SI12befH1JygZssaIYqXeTQVPysEXvV7IbOUlgw/exec";
+  const RADIUS_METERS = 200;
   const googleUrl =
     "https://script.google.com/macros/s/AKfycbzTJfFf3es-C2JxUMGGSuaR0A06M35SI12befH1JygZssaIYqXeTQVPysEXvV7IbOUlgw/exec";
   const apiUrl =
@@ -36,6 +35,7 @@
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         const { latitude, longitude } = pos.coords;
+        console.log("Current position:", latitude, longitude);
         const dist = getDistance(office, { lat: latitude, lng: longitude });
         if (dist <= RADIUS_METERS) {
           status = "Logging your check-in...";
@@ -64,14 +64,29 @@
       },
     );
   }
+
+  async function tapInTest() {
+    status = "Checking location...";
+    status = "Logging your check-in...";
+    const apiUrl =
+      "https://api.allorigins.win/raw?url=" +
+      encodeURIComponent(
+        "https://script.google.com/macros/s/AKfycbzE_NCOrQnT8ttnkdT0wwwZP5UkhO93wyzTPa-wTf34j20hbrgihTqHwMwYmenNvr7Z2A/exec" +
+          "?name=mario&surname=super&lat=0.123&lng=0.456",
+      );
+    await fetch(apiUrl);
+
+    status = "✅ Logged successfully!";
+  }
 </script>
 
-<h1>Office Tap-In 3</h1>
+<h1>Office Tap-In</h1>
 <input placeholder="name" bind:value={name} />
 <input placeholder="surname" bind:value={surname} />
 <button on:click={tapIn}>Tap In</button>
+<button on:click={tapInTest}>Tap In (developer test)</button>
 <p>{status}</p>
-
+<Commit />
 <DebugPanel />
 
 <style>
