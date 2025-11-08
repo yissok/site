@@ -4,95 +4,71 @@
   import { onMount } from "svelte";
 
   const office = { lat: 51.5183547, lng: -0.1161728 };
-  const RADIUS_METERS = 20000;
-  const googleUrl =
-    "https://script.google.com/macros/s/AKfycbx5JAkyttDJXCXPJeHFbsTIEhFpvXHbRKoixdP6kFTMjLdry2KTh-LG2ae7Ctt_9NAw/exec";
-  const proxyBase = "https://api.allorigins.win/raw?url=";
+  const RADIUS_METERS = 20000; // adjust as needed
 
   let name = "mario";
   let surname = "super";
   let status = "";
-  let retries = 0;
-  let maxRetries = 3;
+
+  // your real formResponse URL
+  const formUrl =
+    "https://docs.google.com/forms/d/e/1FAIpQLSdE-Rq8RfWoa7O4L5ub9DLSFFKy8CHdWXYSd35jFzycwhRhsA/formResponse";
+
+  // replace these with your actual entry IDs
+  const ENTRY_NAME = "entry.1134445879";
+  const ENTRY_SURNAME = "entry.931613039";
+  const ENTRY_LAT = "entry.55118251";
+  const ENTRY_LNG = "entry.146123109";
 
   onMount(() => {
     console.log("Page mounted");
-    // Catch global unhandled rejections for good measure
-    window.addEventListener("unhandledrejection", (event) => {
-      console.error("Unhandled promise rejection:", event.reason);
-      status =
-        "❌ Unhandled network error: " + (event.reason?.message || "Unknown");
-    });
   });
 
+  // Haversine distance
   function getDistance(a, b) {
     const R = 6371e3;
     const φ1 = (a.lat * Math.PI) / 180;
     const φ2 = (b.lat * Math.PI) / 180;
     const Δφ = ((b.lat - a.lat) * Math.PI) / 180;
     const Δλ = ((b.lng - a.lng) * Math.PI) / 180;
-
     const x = Δλ * Math.cos((φ1 + φ2) / 2);
     const y = Δφ;
-    const d = Math.sqrt(x * x + y * y) * R;
-    return d;
-  }
-
-  async function safeFetch(url: string, retriesLeft = maxRetries) {
-    try {
-      const res = await fetch(url);
-      console.log("Fetch response:", res);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return await res.text();
-    } catch (err) {
-      console.error("Fetch error:", err);
-      if (retriesLeft > 0) {
-        retries++;
-        status = `⚠️ Network error, retrying (${maxRetries - retriesLeft + 1}/${maxRetries})...`;
-        await new Promise((r) => setTimeout(r, 1500)); // wait 1.5s
-        return safeFetch(url, retriesLeft - 1);
-      } else {
-        throw new Error("❌ Network failed after retries.");
-      }
-    }
+    return Math.sqrt(x * x + y * y) * R;
   }
 
   async function tapIn() {
     status = "📍 Checking location...";
-    retries = 0;
 
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         const { latitude, longitude } = pos.coords;
-        console.log("Current position:", latitude, longitude);
         const dist = getDistance(office, { lat: latitude, lng: longitude });
 
-        if (dist <= RADIUS_METERS) {
-          status = "⏳ Logging your check-in...";
-          const fullUrl =
-            proxyBase +
-            encodeURIComponent(
-              googleUrl +
-                "?name=" +
-                encodeURIComponent(name) +
-                "&surname=" +
-                encodeURIComponent(surname) +
-                "&lat=" +
-                latitude +
-                "&lng=" +
-                longitude +
-                "&t=" +
-                Date.now(), // 👈 cache buster
-            );
-
-          try {
-            await safeFetch(fullUrl);
-            status = "✅ Logged successfully!";
-          } catch (err) {
-            status = err.message;
-          }
-        } else {
+        if (dist > RADIUS_METERS) {
           status = "❌ You are not at the office!";
+          return;
+        }
+
+        status = "⏳ Logging your check-in...";
+
+        const formData = new FormData();
+        formData.append(ENTRY_NAME, name);
+        formData.append(ENTRY_SURNAME, surname);
+        formData.append(ENTRY_LAT, latitude.toString());
+        formData.append(ENTRY_LNG, longitude.toString());
+
+        try {
+          await fetch(formUrl, {
+            method: "POST",
+            mode: "no-cors", // required for Google Forms
+            body: formData,
+          });
+
+          console.log("✅ Submitted to form");
+          status = "✅ Logged successfully!";
+        } catch (err) {
+          console.error("❌ Error:", err);
+          status = "❌ Failed to log.";
         }
       },
       (err) => {
@@ -102,69 +78,30 @@
     );
   }
 
-  async function tapInTest() {
-    status = "⏳ Logging test check-in...";
-    retries = 0;
-    const testUrl =
-      proxyBase +
-      encodeURIComponent(
-        googleUrl +
-          "?name=" +
-          encodeURIComponent(name) +
-          "&surname=" +
-          encodeURIComponent(surname) +
-          "&lat=1.1&lng=2.2" +
-          "&t=" +
-          Date.now(), // 👈 cache buster
-      );
+async function testTapInForm() {
+  status = "Logging your check-in...";
 
-    try {
-      await safeFetch(testUrl);
-      status = "✅ Test logged successfully!";
-    } catch (err) {
-      status = err.message;
-    }
+  const formData = new FormData();
+  formData.append("entry.1134445879", "Mario"); // Name
+  formData.append("entry.931613039", "Super"); // Surname
+  formData.append("entry.55118251", "0.123"); // Lat
+  formData.append("entry.146123109", "0.456"); // Lng
+
+  try {
+    await fetch(formUrl, {
+      method: "POST",
+      mode: "no-cors",
+      body: formData,
+    });
+    console.log("✅ Submitted to form");
+    status = "✅ Logged successfully!";
+  } catch (err) {
+    console.error("❌ Error:", err);
+    status = "❌ Failed to log.";
   }
-
-  async function oldtapIn() {
-    status = "Checking location...";
-    navigator.geolocation.getCurrentPosition(
-      async (pos) => {
-        const { latitude, longitude } = pos.coords;
-        console.log("Current position:", latitude, longitude);
-        const dist = getDistance(office, { lat: latitude, lng: longitude });
-        if (dist <= RADIUS_METERS) {
-          status = "Logging your check-in...";
-          const apiUrl =
-            "https://api.allorigins.win/raw?url=" +
-            encodeURIComponent(
-              googleUrl +
-                "?name=" +
-                encodeURIComponent(name) +
-                "&surname=" +
-                encodeURIComponent(surname) +
-                "&lat=" +
-                latitude +
-                "&lng=" +
-                longitude,
-            );
-          await fetch(apiUrl);
-
-          status = "✅ Logged successfully!";
-        } else {
-          status = "❌ You are not at the office!";
-        }
-      },
-      (err) => {
-        status = "Location error: " + err.message;
-      },
-    );
-  }
+}
 </script>
 
-<!-- <button on:click={oldtapIn}>old Tap In</button> -->
-
-<!-- UI -->
 <main>
   <h1>Office Tap-In</h1>
 
@@ -174,7 +111,7 @@
   </div>
 
   <button class="tap-btn" on:click={tapIn}>Tap In</button>
-  <button class="test-btn" on:click={tapInTest}>Developer Test</button>
+  <button class="test-btn" on:click={testTapInForm}>testTapInForm</button>
 
   <p class="status">{status}</p>
 
@@ -183,7 +120,6 @@
 </main>
 
 <style>
-  /* 🟢 Mobile-first layout */
   main {
     display: flex;
     flex-direction: column;
@@ -198,6 +134,7 @@
   h1 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-family: "Courier", monospace;
   }
 
   .inputs {
@@ -219,7 +156,6 @@
     box-sizing: border-box;
   }
 
-  /* Big main Tap button — fills most of the screen on mobile */
   .tap-btn {
     width: 100%;
     max-width: 400px;
@@ -232,14 +168,29 @@
     border: none;
     border-radius: 1.5rem;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    transition:
-      transform 0.15s ease,
-      background 0.2s;
+    transition: transform 0.15s ease, background 0.2s;
   }
 
   .tap-btn:active {
     transform: scale(0.97);
     background: #005ec2;
+  }
+
+  .status {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #333;
+    min-height: 2rem;
+  }
+
+  @media (min-width: 600px) {
+    h1 {
+      font-size: 2rem;
+    }
+    .tap-btn {
+      height: 30vh;
+      max-width: 500px;
+    }
   }
 
   .test-btn {
@@ -252,23 +203,6 @@
     border: none;
   }
 
-  .status {
-    margin-top: 1.5rem;
-    font-size: 1rem;
-    color: #333;
-    min-height: 2rem;
-  }
-
-  /* Desktop tweaks */
-  @media (min-width: 600px) {
-    h1 {
-      font-size: 2rem;
-    }
-    .tap-btn {
-      height: 30vh;
-      max-width: 500px;
-    }
-  }
 
   :global(html) {
     font-family: "Courier", monospace;
