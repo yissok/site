@@ -1,30 +1,63 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import DebugPanel from "./DebugPanel.svelte";
   import Commit from "./Commit.svelte";
-  import { onMount } from "svelte";
 
-  const office = { lat: 51.5183547, lng: -0.1161728 };
-  const RADIUS_METERS = 20000; // adjust as needed
+  const RADIUS_METERS = 20000;
 
   let name = "mario";
   let surname = "super";
   let status = "";
+  let map: any;
+  let marker: any;
+  let userLat: number | null = null;
+  let userLng: number | null = null;
+  let leafletLoaded = false;
+  let awaitingConfirmation = false;
+  let showThankYou = false;
 
-  // your real formResponse URL
+  // @ts-ignore
+  declare const L: any;
+
+  let userMarker, officeMarker, line;
+  const offices = [
+    { name: "London HQ", lat: 51.5183547, lng: -0.1161728 },
+    { name: "Paris Office", lat: 48.8566, lng: 2.3522 },
+    { name: "Berlin Hub", lat: 52.52, lng: 13.405 },
+    { name: "Madrid Office", lat: 40.4168, lng: -3.7038 },
+  ];
   const formUrl =
     "https://docs.google.com/forms/d/e/1FAIpQLSdE-Rq8RfWoa7O4L5ub9DLSFFKy8CHdWXYSd35jFzycwhRhsA/formResponse";
 
-  // replace these with your actual entry IDs
   const ENTRY_NAME = "entry.1134445879";
   const ENTRY_SURNAME = "entry.931613039";
   const ENTRY_LAT = "entry.55118251";
   const ENTRY_LNG = "entry.146123109";
 
-  onMount(() => {
-    console.log("Page mounted");
+  onMount(async () => {
+    if (!window.L) {
+      await loadLeaflet();
+      leafletLoaded = true;
+      console.log("✅ Leaflet loaded");
+    } else {
+      leafletLoaded = true;
+    }
   });
 
-  // Haversine distance
+  async function loadLeaflet() {
+    return new Promise((resolve) => {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+      document.head.appendChild(link);
+
+      const script = document.createElement("script");
+      script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+      script.onload = resolve;
+      document.body.appendChild(script);
+    });
+  }
+
   function getDistance(a, b) {
     const R = 6371e3;
     const φ1 = (a.lat * Math.PI) / 180;
@@ -37,69 +70,171 @@
   }
 
   async function tapIn() {
-    status = "📍 Checking location...";
+    // Step 1: If we don’t yet have a location, get it
+    if (!userLat || !userLng) {
+      status = "📍 Getting your current location...";
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          userLat = pos.coords.latitude;
+          userLng = pos.coords.longitude;
+          const nearestOffice = getNearestOffice(userLat, userLng);
 
-    navigator.geolocation.getCurrentPosition(
-      async (pos) => {
-        const { latitude, longitude } = pos.coords;
-        const dist = getDistance(office, { lat: latitude, lng: longitude });
-
-        if (dist > RADIUS_METERS) {
-          status = "❌ You are not at the office!";
-          return;
-        }
-
-        status = "⏳ Logging your check-in...";
-
-        const formData = new FormData();
-        formData.append(ENTRY_NAME, name);
-        formData.append(ENTRY_SURNAME, surname);
-        formData.append(ENTRY_LAT, latitude.toString());
-        formData.append(ENTRY_LNG, longitude.toString());
-
-        try {
-          await fetch(formUrl, {
-            method: "POST",
-            mode: "no-cors", // required for Google Forms
-            body: formData,
+          const dist = getDistance(nearestOffice, {
+            lat: userLat,
+            lng: userLng,
           });
+          status = `${Math.round(dist)}m from ${nearestOffice.name}`;
 
-          console.log("✅ Submitted to form");
-          status = "✅ Logged successfully!";
-        } catch (err) {
-          console.error("❌ Error:", err);
-          status = "❌ Failed to log.";
-        }
-      },
-      (err) => {
-        status = "⚠️ Location error: " + err.message;
-      },
-      { enableHighAccuracy: true, timeout: 10000 },
-    );
+          showMap();
+
+          // Ask user to confirm after seeing map
+          awaitingConfirmation = true;
+        },
+        (err) => {
+          status = "⚠️ Location error: " + err.message;
+        },
+        { enableHighAccuracy: true, timeout: 10000 },
+      );
+      return;
+    }
+
+    // Step 2: If we already have a location, confirm and submit
+    if (awaitingConfirmation) {
+      const office = getNearestOffice(userLat, userLng);
+      const dist = getDistance(office, { lat: userLat, lng: userLng });
+      if (dist > RADIUS_METERS) {
+        status = "❌ You are not at the office!";
+        return;
+      }
+
+      status = "⏳ Logging your check-in...";
+
+      const formData = new FormData();
+      formData.append(ENTRY_NAME, name);
+      formData.append(ENTRY_SURNAME, surname);
+      formData.append(ENTRY_LAT, userLat.toString());
+      formData.append(ENTRY_LNG, userLng.toString());
+
+      try {
+        await fetch(formUrl, {
+          method: "POST",
+          mode: "no-cors",
+          body: formData,
+        });
+        status = "✅ Logged successfully!";
+        showThankYou = true;
+      } catch (err) {
+        console.error("❌ Error:", err);
+        status = "❌ Failed to log.";
+      }
+
+      // Reset confirmation state
+      awaitingConfirmation = false;
+      return;
+    }
   }
+  function showMap() {
+    if (!L) {
+      console.warn("Leaflet not loaded yet");
+      return;
+    }
 
-async function testTapInForm() {
-  status = "Logging your check-in...";
+    if (!map) {
+      map = L.map("map").setView([userLat, userLng], 14);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(map);
+    }
 
-  const formData = new FormData();
-  formData.append("entry.1134445879", "Mario"); // Name
-  formData.append("entry.931613039", "Super"); // Surname
-  formData.append("entry.55118251", "0.123"); // Lat
-  formData.append("entry.146123109", "0.456"); // Lng
+    // Remove old markers/lines if they exist
+    if (userMarker) map.removeLayer(userMarker);
+    if (officeMarker) map.removeLayer(officeMarker);
+    if (line) map.removeLayer(line);
 
-  try {
-    await fetch(formUrl, {
-      method: "POST",
-      mode: "no-cors",
-      body: formData,
+    // Find nearest office
+    const nearest = getNearestOffice(userLat, userLng);
+    if (!nearest) return;
+
+    const greyIcon = L.icon({
+      iconUrl: "/office.png", // relative to /static
+      iconSize: [64, 64],
+      iconAnchor: [32, 64],
+      popupAnchor: [0, -64],
     });
-    console.log("✅ Submitted to form");
-    status = "✅ Logged successfully!";
-  } catch (err) {
-    console.error("❌ Error:", err);
-    status = "❌ Failed to log.";
+
+    // Office marker (lower zIndex)
+    officeMarker = L.marker([nearest.lat, nearest.lng], {
+      icon: greyIcon,
+      zIndexOffset: 0, // default
+    })
+      .bindPopup(`${nearest.name}`)
+      .addTo(map);
+
+    // User marker (higher zIndex)
+    userMarker = L.marker([userLat, userLng], {
+      zIndexOffset: 1000, // user marker appears on top
+    }).addTo(map);
+
+    // Draw dotted line
+    line = L.polyline(
+      [
+        [userLat, userLng],
+        [nearest.lat, nearest.lng],
+      ],
+      { color: "#0078ff", weight: 2, dashArray: "6 6" },
+    ).addTo(map);
+
+    // Fit map view
+    map.fitBounds([
+      [userLat, userLng],
+      [nearest.lat, nearest.lng],
+    ]);
+
+    map.setView([userLat, userLng], 16);
   }
-}
+
+  async function testTapInForm() {
+    status = "Logging your check-in...";
+    const formData = new FormData();
+    formData.append("entry.1134445879", "Mario");
+    formData.append("entry.931613039", "Super");
+    formData.append("entry.55118251", "0.123");
+    formData.append("entry.146123109", "0.456");
+    try {
+      await fetch(formUrl, { method: "POST", mode: "no-cors", body: formData });
+      console.log("✅ Submitted to form");
+      status = "✅ Logged successfully!";
+    } catch (err) {
+      console.error("❌ Error:", err);
+      status = "❌ Failed to log.";
+    }
+  }
+
+  function getNearestOffice(userLat, userLng) {
+    let nearest = null;
+    let minDist = Infinity;
+
+    for (const office of offices) {
+      const d = haversine(userLat, userLng, office.lat, office.lng);
+      if (d < minDist) {
+        minDist = d;
+        nearest = office;
+      }
+    }
+
+    return nearest;
+  }
+
+  function haversine(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Earth radius in km
+    const toRad = (deg) => (deg * Math.PI) / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
 </script>
 
 <main>
@@ -110,8 +245,15 @@ async function testTapInForm() {
     <input placeholder="surname" bind:value={surname} />
   </div>
 
-  <button class="tap-btn" on:click={tapIn}>Tap In</button>
+  <button class="tap-btn" on:click={tapIn}>
+    {awaitingConfirmation ? "✅ Confirm & Submit" : "Tap In"}
+  </button>
   <button class="test-btn" on:click={testTapInForm}>testTapInForm</button>
+  <div id="map"></div>
+
+  {#if userLat && userLng}
+    <p>your location is: ({userLat.toFixed(5)}, {userLng.toFixed(5)})</p>
+  {/if}
 
   <p class="status">{status}</p>
 
@@ -131,10 +273,39 @@ async function testTapInForm() {
     background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 100%);
   }
 
-  h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+  #map {
+    width: 100%;
+    height: 300px;
+    max-width: 500px;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .tap-btn {
+    width: 100%;
+    max-width: 400px;
+    height: 35vh;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background: #0078ff;
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease;
     font-family: "Courier", monospace;
+  }
+
+  .tap-btn:active {
+    transform: scale(0.97);
+  }
+
+  .status {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #333;
+    min-height: 2rem;
   }
 
   .inputs {
@@ -149,61 +320,12 @@ async function testTapInForm() {
   input {
     padding: 0.8rem;
     font-size: 1rem;
-    font-family: "Courier", monospace;
     border-radius: 0.75rem;
     border: 1px solid #ccc;
     width: 100%;
     box-sizing: border-box;
-  }
-
-  .tap-btn {
-    width: 100%;
-    max-width: 400px;
-    height: 35vh;
-    font-size: 2rem;
-    font-weight: bold;
     font-family: "Courier", monospace;
-    color: white;
-    background: #0078ff;
-    border: none;
-    border-radius: 1.5rem;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    transition: transform 0.15s ease, background 0.2s;
   }
-
-  .tap-btn:active {
-    transform: scale(0.97);
-    background: #005ec2;
-  }
-
-  .status {
-    margin-top: 1.5rem;
-    font-size: 1rem;
-    color: #333;
-    min-height: 2rem;
-  }
-
-  @media (min-width: 600px) {
-    h1 {
-      font-size: 2rem;
-    }
-    .tap-btn {
-      height: 30vh;
-      max-width: 500px;
-    }
-  }
-
-  .test-btn {
-    margin-top: 1rem;
-    font-size: 1rem;
-    font-family: "Courier", monospace;
-    padding: 0.6rem 1.2rem;
-    border-radius: 0.75rem;
-    background: #ddd;
-    border: none;
-  }
-
-
   :global(html) {
     font-family: "Courier", monospace;
   }
@@ -215,5 +337,15 @@ async function testTapInForm() {
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  .test-btn {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-family: "Courier", monospace;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.75rem;
+    background: #ddd;
+    border: none;
   }
 </style>
