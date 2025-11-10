@@ -238,27 +238,42 @@
 </script>
 
 <main>
-  <h1>Office Tap-In</h1>
+  {#if showThankYou}
+    <!-- ✅ Thank you screen -->
+    <div class="thank-you">
+      <h2>✅ Thanks for checking in!</h2>
+      <p>Your location has been logged successfully</p>
 
-  <div class="inputs">
-    <input placeholder="name" bind:value={name} />
-    <input placeholder="surname" bind:value={surname} />
-  </div>
+      <button class="reload-btn" on:click={() => location.reload()}>
+        🔄 Tap In Again
+      </button>
+    </div>
+  {:else}
+    <!-- 🗺️ Original UI -->
+    <h1>Office Tap-In</h1>
 
-  <button class="tap-btn" on:click={tapIn}>
-    {awaitingConfirmation ? "✅ Confirm & Submit" : "Tap In"}
-  </button>
-  <button class="test-btn" on:click={testTapInForm}>testTapInForm</button>
-  <div id="map"></div>
+    <div class="inputs">
+      <input placeholder="name" bind:value={name} />
+      <input placeholder="surname" bind:value={surname} />
+    </div>
 
-  {#if userLat && userLng}
-    <p>your location is: ({userLat.toFixed(5)}, {userLng.toFixed(5)})</p>
+    <button class="tap-btn" on:click={tapIn}>
+      {awaitingConfirmation ? "✅ Confirm & Submit" : "Tap In"}
+    </button>
+
+    <button class="test-btn" on:click={testTapInForm}>testTapInForm</button>
+
+    <div id="map"></div>
+
+    {#if userLat && userLng}
+      <p>your location is: ({userLat.toFixed(5)}, {userLng.toFixed(5)})</p>
+    {/if}
+
+    <p class="status">{status}</p>
+
+    <Commit />
+    <DebugPanel />
   {/if}
-
-  <p class="status">{status}</p>
-
-  <Commit />
-  <DebugPanel />
 </main>
 
 <style>
@@ -334,9 +349,6 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-tap-highlight-color: transparent;
   }
 
   .test-btn {
@@ -347,5 +359,28 @@
     border-radius: 0.75rem;
     background: #ddd;
     border: none;
+  }
+  .thank-you {
+    text-align: center;
+    padding: 3rem;
+    background: #f6f8fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .reload-btn {
+    margin-top: 2rem;
+    background-color: #0078ff;
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .reload-btn:hover {
+    background-color: #005fcc;
   }
 </style>
