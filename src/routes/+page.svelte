@@ -272,7 +272,7 @@
     <p class="status">{status}</p>
 
     <Commit />
-    <DebugPanel />
+    <!--<DebugPanel />-->
   {/if}
 </main>
 
