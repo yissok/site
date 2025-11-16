@@ -20,7 +20,9 @@
   declare const L: any;
 
   let userMarker, officeMarker, line;
-  const offices = [
+  let officeMarkers = [];
+
+  let offices = [
     { name: "London HQ", lat: 51.5183547, lng: -0.1161728 },
     { name: "Paris Office", lat: 48.8566, lng: 2.3522 },
     { name: "Berlin Hub", lat: 52.52, lng: 13.405 },
@@ -42,7 +44,39 @@
     } else {
       leafletLoaded = true;
     }
+    offices = await loadOffices();
+    console.log("Offices loaded from sheet:", offices);
   });
+  async function loadOffices() {
+    const url =
+      "https://docs.google.com/spreadsheets/d/1WhjBZMg4eJRWeNxbz5kHMp_Qq56it6Py-LEuozAZfuc/gviz/tq?tqx=out:json&gid=2065176163&tq=SELECT B,C,D";
+
+    const response = await fetch(url);
+    const text = await response.text();
+    const json = JSON.parse(text.substring(47, text.length - 2));
+
+    const rows = json.table.rows;
+
+    const result = [];
+
+    for (const r of rows) {
+      const lat = r.c[0]?.v;
+      const lng = r.c[1]?.v;
+      const name = r.c[2]?.v;
+
+      // Skip header, missing, and #N/A rows
+      if (!lat || !lng || !name) continue;
+      if (lat === "#N/A" || lng === "#N/A") continue;
+
+      result.push({
+        name: name.trim(),
+        lat: Number(lat),
+        lng: Number(lng),
+      });
+    }
+
+    return result;
+  }
 
   async function loadLeaflet() {
     return new Promise((resolve) => {
@@ -146,36 +180,44 @@
       }).addTo(map);
     }
 
-    // Remove old markers/lines if they exist
+    // Remove old markers/lines
     if (userMarker) map.removeLayer(userMarker);
-    if (officeMarker) map.removeLayer(officeMarker);
+    if (officeMarkers) officeMarkers.forEach((m) => map.removeLayer(m));
     if (line) map.removeLayer(line);
 
-    // Find nearest office
     const nearest = getNearestOffice(userLat, userLng);
     if (!nearest) return;
 
     const greyIcon = L.icon({
-      iconUrl: "/office.png", // relative to /static
+      iconUrl: "/office.png",
       iconSize: [64, 64],
       iconAnchor: [32, 64],
       popupAnchor: [0, -64],
     });
 
-    // Office marker (lower zIndex)
-    officeMarker = L.marker([nearest.lat, nearest.lng], {
-      icon: greyIcon,
-      zIndexOffset: 0, // default
-    })
-      .bindPopup(`${nearest.name}`)
-      .addTo(map);
+    const highlightIcon = L.icon({
+      iconUrl: "/office-selected.png", // optional highlight version
+      iconSize: [72, 72],
+      iconAnchor: [36, 72],
+      popupAnchor: [0, -72],
+    });
 
-    // User marker (higher zIndex)
+    // 🔥 Draw ALL offices
+    officeMarkers = [];
+    offices.forEach((o) => {
+      const icon = o.name === nearest.name ? highlightIcon : greyIcon;
+      const marker = L.marker([o.lat, o.lng], { icon, zIndexOffset: 0 })
+        .bindPopup(o.name)
+        .addTo(map);
+      officeMarkers.push(marker);
+    });
+
+    // User marker on top
     userMarker = L.marker([userLat, userLng], {
-      zIndexOffset: 1000, // user marker appears on top
+      zIndexOffset: 1000,
     }).addTo(map);
 
-    // Draw dotted line
+    // Dotted line only to nearest
     line = L.polyline(
       [
         [userLat, userLng],
@@ -184,7 +226,6 @@
       { color: "#0078ff", weight: 2, dashArray: "6 6" },
     ).addTo(map);
 
-    // Fit map view
     map.fitBounds([
       [userLat, userLng],
       [nearest.lat, nearest.lng],
